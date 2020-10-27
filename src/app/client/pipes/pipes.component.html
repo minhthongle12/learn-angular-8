@@ -1,0 +1,17 @@
+<div class="container">
+    <h3> Chuyển đổi chữ hoa thành chữ thường</h3>
+    {{title | lowercase}}
+    <h3>Chuyển đổi chữ thường thành hoa</h3>
+    {{title | uppercase}}
+    <h3>Định dạng ngày tháng</h3>
+    format:dd/MM/yyyy {{ngay | date: 'dd/MM/yyyy'}} <br />
+    format:dd-MM-yyyy {{ngay | date: 'dd-MM-yyyy'}} <br />
+    format:dd-MM-yyyy hh:mm:ss {{ngay | date: 'dd-MM-yyyy HH:mm:ss'}}
+    <br />
+    format:dd-MM-yyyy {{ngay | date: 'dd-MM-yyyy'}}
+
+
+    <h3>Giá tiền</h3>
+    {{giaTien | number: '3.2-3'}}
+
+</div>

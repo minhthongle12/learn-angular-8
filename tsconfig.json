@@ -2,6 +2,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+
+    //ALIAS TRONG ANGULAR ( LÀM GỌN LINK IMPORT)
+    "paths": {
+      "@service/*": ["src/app/common/services/*"]
+    },
+
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

@@ -1,0 +1,57 @@
+<div class="container">
+    <h3>Đăng ký tài khoản</h3>
+    <form #formDangKy="ngForm" (ngSubmit)="dangKy(formDangKy.value)">
+      <div class="form-group">
+        
+        <span>Tài khoản</span>
+        <input class="form-control" #taiKhoan="ngModel" name="taiKhoan" [(ngModel)]="defaultValue.taiKhoan" required maxlength="10" />
+        <div class="alert alert-danger " *ngIf="(taiKhoan.touched 
+        || taiKhoan.dirty) && taiKhoan.errors">
+        
+        <span class="text text-danger" *ngIf="taiKhoan.errors.required " > Tài khoản không được rỗng</span>
+
+        <!-- hoặc có thể thay formDangKy.controls['taiKhoan'] = taiKhoan. (add #taiKhoan ="ngModel" ở mục input) -->
+
+        <span class="text text-danger" *ngIf="taiKhoan.errors.maxlength">Tài khoản kh vượt quá 10 ký tự </span>
+        
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <span>Mật khẩu</span>
+        <input type="password" #password="ngModel" minlength="4" maxlength="10" class="form-control" 
+         name="matKhau" [(ngModel)]="defaultValue.matKhau"  />
+         <div class="alert alert-danger " *ngIf="(password.touched 
+        || password.dirty) && password.errors">
+        
+         <span class="text text-danger" *ngIf="password.errors.maxlength " > Mat Khau </span>
+         <span class="text text-danger" *ngIf="password.errors.minlength">Mat khau </span>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <span>Email</span>
+        <input class="form-control"  #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+         name="email" [ngModel]="defaultValue.email"  />
+         <div class="alert alert-danger " *ngIf="(email.touched 
+         || email.dirty) && email.errors">
+
+
+         <span class="text text-danger" *ngIf="email.errors.pattern">Sai định dạng</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <span>Họ tên</span>
+        <input class="form-control" name="hoTen" ngModel/>
+      </div>
+      
+      <div class="form-group">
+        <span>Số điện thoại</span>
+        <input class="form-control" name="soDT" ngModel />
+      </div>
+      <button type="submit" class="btn btn-success">Đăng
+        ký</button>
+    </form>
+    {{defaultValue.taiKhoan}}
+  </div>

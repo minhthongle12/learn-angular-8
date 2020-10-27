@@ -1,0 +1,8 @@
+<div class="card">
+  <img class="card-img-top" [src]="phim.hinhAnh" alt="" />
+  <div class="card-body">
+    <h4 class="card-title">{{ phim.tenPhim }}</h4>
+    <p class="card-text">{{ phim.gia }}</p>
+    <button class="btn btn-primary" (click)="like()">Like</button>
+  </div>
+</div>

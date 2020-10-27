@@ -1,0 +1,14 @@
+<div class="card">
+  <img class="card-img-top" [src]="phim.hinhAnh" alt="" />
+  <div class="card-body">
+    <h4 class="card-title">{{ phim.tenPhim | shortcut: 20 }}</h4>
+    <p class="card-text">{{ phim.gia }}</p>
+    <button class="btn btn-primary" (click)="like()">Like</button>
+    <!-- <button class="btn btn-primary">Xem</button> -->
+    <a class="btn btn-primary" routerLink="/chi-tiet/{{phim.maPhim}}">Chi Tiet</a>
+    <a class="btn btn-primary" routerLink="/chi-tiet" [queryParams]="{tenPhim: phim.tenPhim, idPhim: phim.maPhim}" >params</a>
+    <button data-toggle="modal" data-target="#modelId" (click)="xemChiTietModal()">
+      Xem Chi Tiet Modal
+    </button>
+  </div>
+</div>

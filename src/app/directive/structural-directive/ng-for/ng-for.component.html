@@ -1,0 +1,49 @@
+<h3 style="color:red">*ngFor</h3>
+
+<ng-container *ngFor="let item of danhSachNhanVien; let stt = index">
+  <div *ngIf="item.tuoi === '18'">
+    {{stt + 1}}. {{item.ten}} - {{item.tuoi}}
+  </div>
+</ng-container>
+
+<h3 style="color:red">Bài tập ng-for</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="form-group">
+        <label>Mã sản phẩm</label>
+        <input type="text" class="form-control" #maSP>
+      </div>
+      <div class="form-group">
+        <label>Tên sản phẩm</label>
+        <input type="text" class="form-control" #tenSP>
+      </div>
+      <div class="form-group">
+        <label>Giá sản phẩm</label>
+        <input type="text" class="form-control" #gia>
+      </div>
+      <button class="btn btn-success" (click)="themSanPham(maSP.value, tenSP.value, gia.value)">Thêm sản
+        phẩm</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã</th>
+          <th>Tên</th>
+          <th>Giá</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="danhSachSanPham && danhSachSanPham.length > 0">
+          <tr *ngFor="let sanPham of danhSachSanPham; let stt = index" [ngClass]="{bg: stt%2===0}">
+            <td>{{stt + 1}}</td>
+            <td>{{sanPham.maSP}}</td>
+            <td>{{sanPham.tenSP}}</td>
+            <td>{{sanPham.gia}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

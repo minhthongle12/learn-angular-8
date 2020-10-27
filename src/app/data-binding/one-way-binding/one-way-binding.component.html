@@ -1,0 +1,9 @@
+<h3 style="color:red">Interpolation</h3>
+<p>{{name}}</p>
+
+<h3 style="color:red">Property Binding</h3>
+<input type="text" [value]="name" #thamso>
+
+<h3 style="color:red">Event Binding</h3>
+<button class="btn btn-success" (click)="eventBinding(thamso.value)">
+  Event Binding</button>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <form [formGroup]="formDangNhap" (ngSubmit)="DangNhap()">
+                <div class="form-group">
+                    <label> Tài Khoản</label>
+                    <input type="text" class="form-control" formControlName="TaiKhoan">
+
+                    <div *ngIf="formDangNhap.get('TaiKhoan').invalid && formDangNhap.get('TaiKhoan').touched">
+                        <div class="alert alert-danger" *ngIf="formDangNhap.controls['TaiKhoan'].errors['required']">
+                            Vui lòng đăng nhập tài khoản
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label> Mật Khẩu</label>
+                    <input type="text" class="form-control" formControlName="MatKhau">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Đăng Nhập</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
